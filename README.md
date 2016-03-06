@@ -3,8 +3,11 @@ Welcome to AWS Lambda in Action
 
 This source code distribution is a companion to the
 *AWS Lambda in Action: Event-Driven Serverless Application* book available from Manning Publications.
+There are a few live demos available at
+  https://eventdrivenapps.com/#livedemos
 To purchase an electronic or printed copy of the book,
-visit https://www.manning.com/books/aws-lambda-in-action
+visit
+  https://www.manning.com/books/aws-lambda-in-action
 
 Requirements
 ------------
@@ -25,13 +28,27 @@ For detailed information on how to use the source code,
 please look at the relative chapters in the book.
 
     Chapter02/
-      greetingsOnDemand.js        Function to greet by "name" in Node.js
-      greetingsOnDemand.py        Function to greet by "name" in Python
-      customGreetingsOnDemand.js  Function for a custom greet by "name" in Node.js
-      customGreetingsOnDemand.py  Function for a custom greet by "name" in Python
+      greetingsOnDemand.js                  Function to greet by "name" in Node.js
+      greetingsOnDemand.py                  Function to greet by "name" in Python
+      customGreetingsOnDemand.js            Function for a custom greet by "name" in Node.js
+      customGreetingsOnDemand.py            Function for a custom greet by "name" in Python
     Chapter03/
-      whatIsMyIp.js               Function to echo the IP address in input in Node.js
-      whatIsMyIp.py               Function to echo the IP address in input in Python
+      whatIsMyIp.js                         Function to echo the IP address in input in Node.js
+      whatIsMyIp.py                         Function to echo the IP address in input in Python
+    Chapter05/
+      Policy_RW_S3.json                     Policy to give read/write access to an Amazon S3 bucket
+      Policy_RW_console_S3.json             Adding permissions required by the Amazon S3 web console
+      Policy_RW_prefix_console_S3.json      Limiting access to a prefix inside an Amazon S3 bucket
+      Policy_RW_DynamoDB.json               Policy to give read/write access to a DynamoDB table
+      Policy_RW_query_DynamoDB.json         Adding query permissions to Amazon DynamoDB
+      Policy_Lambda_basic_exec_role.json    Lambda basic execution role permissions
+      Policy_Lambda_trust.json              Lambda basic execution role trust relationships
+      Policy_Cognito_private_S3.json        Policy to give access to private folders on Amazon S3
+      Policy_Cognito_public_S3.json         Policy to give access to public folders on Amazon S3
+      Policy_Cognito_private_DynamoDB.json  Policy to give private access to DynamoDB
+      Policy_Cognito_shared_DynamoDB.json   Policy to give shared access to DynamoDB
+      Policy_Cognito_trust_auth.json        Amazon Cognito trust policy for the unauthenticated role
+      Policy_Cognito_trust_unauth.json      Amazon Cognito trust policy for the authenticated role
 
 Contact Information
 -------------------
