@@ -3,8 +3,10 @@ Welcome to AWS Lambda in Action
 
 This source code distribution is a companion to the
 *AWS Lambda in Action: Event-Driven Serverless Application* book available from Manning Publications.
+
 There are a few live demos available at
   https://eventdrivenapps.com/#livedemos
+
 To purchase an electronic or printed copy of the book,
 visit
   https://www.manning.com/books/aws-lambda-in-action
