@@ -37,7 +37,7 @@ please look at the relative chapters in the book.
     Chapter03/
       whatIsMyIp.js                         Function to echo the IP address in input in Node.js
       whatIsMyIp.py                         Function to echo the IP address in input in Python
-    Chapter05/
+    Chapter04/
       Policy_RW_S3.json                     Policy to give read/write access to an Amazon S3 bucket
       Policy_RW_console_S3.json             Adding permissions required by the Amazon S3 web console
       Policy_RW_prefix_console_S3.json      Limiting access to a prefix inside an Amazon S3 bucket
@@ -45,6 +45,7 @@ please look at the relative chapters in the book.
       Policy_RW_query_DynamoDB.json         Adding query permissions to Amazon DynamoDB
       Policy_Lambda_basic_exec_role.json    Lambda basic execution role permissions
       Policy_Lambda_trust.json              Lambda basic execution role trust relationships
+    Chapter05/
       Policy_Cognito_private_S3.json        Policy to give access to private folders on Amazon S3
       Policy_Cognito_public_S3.json         Policy to give access to public folders on Amazon S3
       Policy_Cognito_private_DynamoDB.json  Policy to give private access to DynamoDB
