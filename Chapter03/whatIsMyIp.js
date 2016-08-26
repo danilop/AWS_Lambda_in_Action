@@ -1,3 +1,3 @@
-exports.handler = function(event, context) {
-  context.succeed(event.myip);
+exports.handler = (event, context, callback) => {
+  callback(null, event.myip);
 };

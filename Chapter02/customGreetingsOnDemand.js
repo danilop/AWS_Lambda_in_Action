@@ -1,6 +1,6 @@
 console.log('Loading function');
 
-exports.handler = function(event, context) {
+exports.handler = (event, context, callback) => {
     console.log('Received event:',
         JSON.stringify(event, null, 2));
     console.log('greet =', event.greet);
@@ -19,5 +19,5 @@ exports.handler = function(event, context) {
     }
     var greetings = greet + ' ' + name + '!';
     console.log(greetings);
-    context.succeed(greetings);
+    callback(null, greetings);
 };

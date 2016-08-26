@@ -46,12 +46,36 @@ please look at the relative chapters in the book.
       Policy_Lambda_basic_exec_role.json    Lambda basic execution role permissions
       Policy_Lambda_trust.json              Lambda basic execution role trust relationships
     Chapter05/
+      FaceDetection/                        Function using OpenCV to detect faces.
+      Scheduled/                            Function to clean up your S3 bucket. Can be scheduled.
+      SubscribeToS3/                        Function triggered by a new picture on Amazon S3.
+    Chapter06/
       Policy_Cognito_private_S3.json        Policy to give access to private folders on Amazon S3
       Policy_Cognito_public_S3.json         Policy to give access to public folders on Amazon S3
       Policy_Cognito_private_DynamoDB.json  Policy to give private access to DynamoDB
       Policy_Cognito_shared_DynamoDB.json   Policy to give shared access to DynamoDB
       Policy_Cognito_trust_auth.json        Amazon Cognito trust policy for the unauthenticated role
       Policy_Cognito_trust_unauth.json      Amazon Cognito trust policy for the authenticated role
+    Chapter07/
+      GreetingsOnDemand/                    Calling a function via JavaScript from a static web page
+      CustomGreetingsOnDemand/              Another example of calling a function via JavaScript
+      SimpleWebsite/                        Dynamic web site using Amazon API Gateway and EJS templates
+    Chapter09/
+      SampleAuth/                           Sample serverless authentication service
+    Chapter10/
+      SampleAuth/                           Same as before (more features in this chapter)
+    Chapter11/
+      MediaSharing/                         Sample media sharing web app
+    Chapter13/
+      app.py                                Sample app using Chalice
+      greetingsOnDemand.js                  Same old function, to test local development
+      greetingsOnDemand.py                  Same old function, to test local development
+      runLocal.js                           Sample wrapper to run JavaScript functions locally
+      runLocal.py                           Sample wrapper to run Python functions locally
+      lambdaTest.js                         Function to test other functions, based on the blueprint
+    Chapter14/
+      CloudFormation/                       CloudFormation templates to create Lambda functions
+      greetingsOnDemand/                    Same old function, to play with AWS CloudFormation
 
 Contact Information
 -------------------
