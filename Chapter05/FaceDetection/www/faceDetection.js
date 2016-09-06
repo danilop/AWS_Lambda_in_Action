@@ -10,9 +10,9 @@ function returnFaces() {
   var imageUrl = null;
   var input;
   if (document.getElementById('monalisa').checked) {
-    imageUrl = 'https://eventdrivenapps.com/examples/FaceRecognition/monalisa.jpg';
+    imageUrl = 'https://eventdrivenapps.com/examples/FaceDetection/monalisa.jpg';
   } else if (document.getElementById('astronauts').checked) {
-    imageUrl = 'https://eventdrivenapps.com/examples/FaceRecognition/astronauts.jpg';
+    imageUrl = 'https://eventdrivenapps.com/examples/FaceDetection/astronauts.jpg';
   } else {
     imageUrl = document.getElementById('customUrl').value;
   }
@@ -26,7 +26,7 @@ function returnFaces() {
     };
   }
   lambda.invoke({
-    FunctionName: 'faceRecognition',
+    FunctionName: 'faceDetection',
     Payload: JSON.stringify(input)
   }, function(err, data) {
     var result = document.getElementById('result');
