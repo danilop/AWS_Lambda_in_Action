@@ -1,10 +1,11 @@
 // Config
-var S3_BUCKET = 'danilop-media-sharing';
-var ITEMS_TABLE = 'MediaSharing';
-var IDENTITY_POOL_ID = 'us-east-1:3909a295-f5f8-4d6b-97ea-994ed4d324dd';
+var S3_BUCKET = '<BUCKET>';
+var ITEMS_TABLE = '<DYNAMODB_TABLE>';
+var IDENTITY_POOL_ID = '<IDENTITY_POOL_ID>';
+var REGION = '<REGION>'
 
 // AWS Credentials via Amazon Cognito
-AWS.config.region = 'us-east-1';
+AWS.config.region = REGION;
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
   IdentityPoolId: IDENTITY_POOL_ID
 });
