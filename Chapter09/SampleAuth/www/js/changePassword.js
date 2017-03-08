@@ -1,8 +1,8 @@
-AWS.config.region = '<REGION>';
+// Initialize the Amazon Cognito credentials provider
+AWS.config.region = 'us-east-1'; // Region
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-  IdentityPoolId: '<IDENTITY_POOL_ID>'
+    IdentityPoolId: 'us-east-1:51d8f08c-a0d8-4607-9895-f2849ecec37a',
 });
-
 var lambda = new AWS.Lambda();
 
 function changePassword() {
@@ -23,60 +23,31 @@ function changePassword() {
     result.innerHTML = 'Please specify a new password.';
   } else if (newPassword.value != verifyNewPassword.value) {
       result.innerHTML = 'The new passwords are <b>different</b>, please check.';
-  } else {
+  } else
 
-    var input = {
-      email: email.value,
-      password: oldPassword.value
-    };
+               var input = {
+                  email: email.value,
+                  oldPassword: oldPassword.value,
+                  newPassword: newPassword.value
+                };
 
-    lambda.invoke({
-      FunctionName: 'sampleAuthLogin',
-      Payload: JSON.stringify(input)
-    }, function(err, data) {
-      if (err) console.log(err, err.stack);
-      else {
-        var output = JSON.parse(data.Payload);
-				console.log('identityId: ' + output.identityId);
-				console.log('token: ' + output.token);
-        if (!output.login) {
-          result.innerHTML = '<b>Not</b> logged in';
-        } else {
-          result.innerHTML = 'Logged in with identityId: ' + output.identityId + '<br>';
 
-					var creds = AWS.config.credentials;
-					creds.params.IdentityId = output.identityId;
-					creds.params.Logins = {
-						'cognito-identity.amazonaws.com': output.token
-					};
-					creds.expired = true;
+                                  lambda.invoke({
+                                    FunctionName: 'sampleAuthChangePassword',
+                                    Payload: JSON.stringify(input)
+                                  }, function(err, data) {
+                                    if (err) console.log(err, err.stack);
+                                    else {
+                                      var output = JSON.parse(data.Payload);
+                                      if (!output.changed) {
+                                        result.innerHTML = 'Password <b>not</b> changed.';
+                                      } else {
+                                        result.innerHTML = 'Password changed.';
+                                                        }
+                                                }
+                                        });
 
-	        var input = {
-	          email: email.value,
-	          oldPassword: oldPassword.value,
-	          newPassword: newPassword.value
-	        };
 
-				  lambda.invoke({
-				    FunctionName: 'sampleAuthChangePassword',
-				    Payload: JSON.stringify(input)
-				  }, function(err, data) {
-				    if (err) console.log(err, err.stack);
-				    else {
-				      var output = JSON.parse(data.Payload);
-				      if (!output.changed) {
-				        result.innerHTML = 'Password <b>not</b> changed.';
-				      } else {
-				        result.innerHTML = 'Password changed.';
-							}
-						}
-					});
-
-      	}
-      }
-    });
-
-  }
 }
 
 var form = document.getElementById('change-password-form');
