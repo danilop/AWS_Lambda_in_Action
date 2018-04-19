@@ -73,14 +73,14 @@ exports.handler = function(event, context) {
           changed: false
         });
       } else {
-        computeHash(oldPassword, salt, function(err, salt, hash) {
+        cryptoUtils.computeHash(oldPassword, salt, function(err, salt, hash) {
           if (err) {
             context.fail('Error in hash: ' + err);
           } else {
             if (hash == correctHash) {
               // Login ok
               console.log('User logged in: ' + email);
-              computeHash(newPassword, function(err, newSalt, newHash) {
+              cryptoUtils.computeHash(newPassword, function(err, newSalt, newHash) {
                 if (err) {
                   context.fail('Error in computeHash: ' + err);
                 } else {
